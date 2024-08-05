@@ -1,11 +1,10 @@
 import { CiImageOn } from "react-icons/ci";
 import { ImCloud } from "react-icons/im";
-import { TbUvIndex } from "react-icons/tb";
 import { SiKeepassxc } from "react-icons/si";
-import { BsDropletHalf, BsFillSunFill, BsWind } from "react-icons/bs";
+import { BsDropletHalf, BsWind } from "react-icons/bs";
 import { BsSunset } from "react-icons/bs";
 import { BsSunrise } from "react-icons/bs";
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { MainContext } from "../../store/context";
 
 import icon_1 from '../../images/cloud-5.png'
