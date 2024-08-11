@@ -4,75 +4,16 @@ import CityAndTime from './Content/CityAndTime'
 import WeatherInfo from './Content/WeatherInfo'
 import HourlyForecast from './Content/HourlyForecast'
 import { MainContext } from '../store/context'
-
-
-import icon_1 from '../images/cloud-5.png'
-import icon_2 from '../images/cloud-17.png'
-import icon_3 from '../images/cloud-f-6.png'
-import icon_4 from '../images/cloud-f-rain-7.png'
-import icon_5 from '../images/cloud-rain-9.png'
-import icon_6 from '../images/cloud-sun-10.png'
-import icon_7 from '../images/cloud-wind-8.png'
-import icon_8 from '../images/cloud-wind-13.png'
-import icon_9 from '../images/moon-11.png'
-import icon_10 from '../images/moon-star-4.png'
-import icon_11 from '../images/sun-2.png'
-import icon_12 from '../images/sun-rain-16.png'
-
 import { Swiper, SwiperSlide } from 'swiper/react';
-
 import '../App.css'
-
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-
 import { EffectCards } from 'swiper/modules';
 import { HiPaperAirplane } from 'react-icons/hi'
+import { weatherIcon } from "../config/contants";
 
 const Content = () => {
-  const { state, dispatch } = useContext(MainContext)
-
-  function weatherIcon(icon) {
-    switch (icon) {
-      case '04d':
-        return icon_1
-      case '04n':
-        return icon_1
-      case '03d':
-        return icon_2
-      case '03n':
-        return icon_2
-      case '11d':
-        return icon_3
-      case '11n':
-        return icon_4
-      case '10d':
-        return icon_12
-      case '10n':
-        return icon_5
-      case '01d':
-        return icon_11
-      case '01n':
-        return icon_9
-      case '9d':
-        return icon_12
-      case '9n':
-        return icon_12
-      case '02d':
-        return icon_6
-      case '02n':
-        return icon_10
-      case '50d':
-        return icon_8
-      case '50n':
-        return icon_8
-      case '13d':
-        return icon_7
-      case '13n':
-        return icon_8
-
-    }
-  }
+  const { state } = useContext(MainContext)
 
   function forecastDay(dt) {
     let time = new Date('January 01, 1970 00:00:00')
@@ -84,8 +25,6 @@ const Content = () => {
 
   const nowDate = +(state.forecastData.list?.[0].dt_txt.slice(8, 10))
 
-  // console.log(nowDatee)
-  // console.log(nowDate)
   const dailyForecastList = state.forecastData.list?.filter(item => {
     const forecastDate = +item.dt_txt.slice(8, 10)
     const forecastHour = +item.dt_txt.slice(11, 13)
@@ -97,17 +36,10 @@ const Content = () => {
       return item
     }
   })
-  // console.log(dailyForecastList)
-
 
   return (
     <>
       {
-        // (state.forecastData.list && state.weatherData.weather) ?
-        //   <>
-        //   <div className="w-full h-[calc(100vh-60px)] bg-white"></div>
-        //   </>
-        //   :
           <div>
             <div className='mx-auto w-[90%] min-h-[calc(100vh-60px)] flex flex-col justify-evenly py-[15px]' >
               <div className='flex flex-col lg:flex-row justify-between gap-[20px]'>

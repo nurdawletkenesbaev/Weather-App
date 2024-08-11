@@ -10,7 +10,8 @@ import icon_9 from '../images/moon-11.png'
 import icon_10 from '../images/moon-star-4.png'
 import icon_11 from '../images/sun-2.png'
 import icon_12 from '../images/sun-rain-16.png'
-function weatherIcon(icon) {
+
+export function weatherIcon(icon) {
     switch (icon) {
         case '04d':
             return icon_1
