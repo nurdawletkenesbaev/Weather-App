@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef } from 'react'
-import { getData, getForecastData } from '../../hooks/GetDataAxios'
+import { getData, getForecastData } from '../hooks/GetDataAxios'
 import { MainContext } from '../store/context'
 
 const Header = () => {
