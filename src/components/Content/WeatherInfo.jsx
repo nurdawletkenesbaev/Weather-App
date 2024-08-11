@@ -92,7 +92,7 @@ const WeatherInfo = () => {
                             <h1 className="font-bold text-[40px]">{Math.round(state.weatherData.main?.temp - 273.15)}°C</h1>
                             <span>Feels like: {(state.weatherData.main?.feels_like - 273.15).toFixed()}°C</span>
                             <div className="flex justify-between gap-[20px]">
-                                <div className="flex gap-2 items-end mt-[20px] justify-center">
+                                <div className="flex gap-2 items-end md:items-center mt-[20px] justify-center">
                                     <div className="text-orange-500"><BsSunrise size={45} /></div>
                                     <div>
                                         <p className="font-bold">Sunrise</p>
@@ -100,7 +100,7 @@ const WeatherInfo = () => {
                                             .slice(16, 21)} AM</span>
                                     </div>
                                 </div>
-                                <div className="flex gap-2 items-end mt-[20px] justify-center">
+                                <div className="flex gap-2 items-end md:items-center mt-[20px] justify-center">
                                     <div className="text-orange-500"><BsSunset size={45} /></div>
                                     <div>
                                         <p className="font-bold">Sunset</p>
